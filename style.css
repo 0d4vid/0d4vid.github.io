@@ -518,6 +518,7 @@ section {
 }
 
 .about-text p {
+    font-family: 'Share Tech Mono', monospace;
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
