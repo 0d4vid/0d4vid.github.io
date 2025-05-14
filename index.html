@@ -1,7 +1,30 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO management -->
+
+    <!-- Meta data -->
+    <meta name="description" content="Portfolio of David Nonagni, a software engineering student specializing in web development, Python, JavaScript, and more.">
+    <meta name="keywords" content="portfolio, web developer, software engineer, David Nonagni, Python, JavaScript, React, Node.js">
+    <meta name="author" content="David Nonagni">
+    <!-- Socials -->
+    <meta property="og:title" content="David Nonagni - Web Developer Portfolio">
+    <meta property="og:description" content="Portfolio of David Nonagni, showcasing web development projects and skills.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://0d4vid.github.io">
+    <meta property="og:image" content="https://0d4vid.github.io/images/portfolio.png">
+    <meta property="og:image:alt" content="David Nonagni Portfolio">
+
     <title>David Portfolio</title>
+
+    <!-- Setting up icons -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <!--<script src="https://lib.yourware.so/yourware-lib.umd.js" id="yourware-lib"></script></head> -->
@@ -30,7 +53,7 @@
             <div class="glitch" data-text="NONAGNI David Jordan">NONAGNI David Jordan</div>
         </div>
         <div class="typewriter">
-            <h1>I build innovative <span class="accent" id="changingText">websites</span> </h1>
+            <h1>I build innovative <span class="accent" id="changingText">Websites</span> </h1>
         </div>
         <p class="hero-subtitle">Developeur Web &amp; Software </p>
         <div class="cta-buttons">
@@ -265,21 +288,27 @@
                     <a href="https://www.instagram.com/0d4vid/"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <form class="contact-form">
+            <form target="_blank" class="contact-form" action="https://formsubmit.co/66447b405067fccddbc8693cc45a9978" method="POST">
+                <!-- Add hidden fields for FormSubmit configuration -->
+                 <input type="hidden" name="_subject" value="New submission from your portfolio">
+                <input type="hidden" name="_next" value="https://0d4vid.github.io">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
                 <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
                     <div class="focus-border"></div>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
                     <div class="focus-border"></div>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="subject" placeholder="Subject">
+                    <input type="text" id="subject" name="subject" placeholder="Subject">
                     <div class="focus-border"></div>
                 </div>
                 <div class="form-group">
-                    <textarea id="message" placeholder="Your Message"></textarea>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                     <div class="focus-border"></div>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message</button>

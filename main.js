@@ -90,19 +90,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Changing text effect
-    const words = ['websites', 'applications', 'experiences', 'IT solutions', 'ai agent', 'bot', 'mobile app'];
+    const words = ['Websites', 'Web Apps', 'Softwares', 'Experiences', 'Designs', 'Solutions', 'AI Agents', 'AI Bots', 'Mobile Apps'];
     let wordIndex = 0;
-    
-    setInterval(() => {
+    const text = document.getElementById('changingText');
+
+    function changeWord() {
         wordIndex = (wordIndex + 1) % words.length;
-        const text = document.getElementById('changingText');
+        text.style.animation = 'none';
         text.style.opacity = 0;
-        
-        setTimeout(() => {
+
+        setTimeout(() =>{
             text.textContent = words[wordIndex];
             text.style.opacity = 1;
-        }, 500);
-    }, 3000);
+            void text.offsetWidth;
+            text.style.animation = 'fade 0.2s, typing 1.5s steps(20, end), blink-caret 0.75s step-end';
+        }, 1000)
+    }
+    setInterval(changeWord, 4000)
 
     // Navbar scroll effect
     window.addEventListener('scroll', () => {
@@ -160,24 +164,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Form submission
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Form validation & submission logic would go here
-            // For demo, just show a success message
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.textContent;
-            btn.textContent = 'Message Sent!';
-            btn.style.backgroundColor = '#0cffe1';
-            
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        const btn = this.querySelector('button');
+        const originalText = btn.textContent;
+        
+        // Simple validation
+        if (!this.name.value || !this.email.value || !this.message.value) {
+            e.preventDefault(); // Only prevent default if validation fails
+            btn.textContent = 'Please fill all fields!';
+            btn.style.backgroundColor = '#ff3e3e';
             setTimeout(() => {
-                contactForm.reset();
                 btn.textContent = originalText;
                 btn.style.backgroundColor = '';
-            }, 3000);
-        });
-    }
+            }, 2000);
+            return;
+        }
+        
+        // Show sending state
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        setTimeout(() => {
+            btn.textContent = 'Message Sent! ✓';
+            btn.style.backgroundColor = '#0cffe1';
+            setTimeout(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }, 2000);
+
+        }, 3000);
+        
+    });
+}
 
     // Update active nav link on scroll
     window.addEventListener('scroll', () => {
