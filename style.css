@@ -417,19 +417,25 @@ section {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('./images/academia.png') center/cover no-repeat;
+    background: url('./images/flashart.png') center/cover no-repeat;
     opacity: 0.6;
     transition: var(--transition);
 }
 
 .project-card:nth-child(2) .project-img::before {
-    background: url('./images/portfolio.png') center/cover no-repeat;
+    background: url('./images/explora.png') center/cover no-repeat;
 }
 
 .project-card:nth-child(3) .project-img::before {
-    background: url('./images/telegram.png') center/cover no-repeat;
+    background: url('./images/academia.png') center/cover no-repeat;
 }
 .project-card:nth-child(4) .project-img::before {
+    background: url('./images/portfolio.png') center/cover no-repeat;
+}
+.project-card:nth-child(5) .project-img::before {
+    background: url('./images/telegram.png') center/cover no-repeat;
+}
+.project-card:nth-child(6) .project-img::before {
     background: url('./images/screenshot-mobile.png') center/cover no-repeat;
 }
 
@@ -849,4 +855,53 @@ section {
     to {
         opacity: 1;
     }
+}
+
+/* Image Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
 }

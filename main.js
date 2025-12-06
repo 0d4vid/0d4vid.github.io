@@ -221,4 +221,30 @@ if (contactForm) {
             }
         });
     });
+
+    // Image Modal Logic
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const viewProjectBtns = document.querySelectorAll(".view-project-btn");
+    const closeModal = document.querySelector(".close-modal");
+
+    viewProjectBtns.forEach(btn => {
+        btn.addEventListener("click", function() {
+            const imagePath = this.getAttribute("data-image");
+            modal.style.display = "block";
+            modalImg.src = imagePath;
+        });
+    });
+
+    if(closeModal) {
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 });
