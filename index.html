@@ -1,407 +1,601 @@
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Nonagni David — AI automation builder in Douala, Cameroon. n8n automation, AI integration, ETL pipelines, web development, data science, analytics." />
+    <meta name="keywords" content="Nonagni David, AI automation, n8n automation, AI integration, ETL pipelines, web development, data science, Douala, Cameroon" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://0d4vid.is-a.dev/" />
+    <link rel="alternate" hreflang="en" href="https://0d4vid.is-a.dev/?lang=en" />
+    <link rel="alternate" hreflang="fr" href="https://0d4vid.is-a.dev/?lang=fr" />
+    <link rel="alternate" hreflang="x-default" href="https://0d4vid.is-a.dev/" />
+    <meta name="google-site-verification" content="VjmKF88T0X_1d5bJl-nhyUKdBGNRjFIXGzCya5y7Xac" />
+    <title>Nonagni David · AI Automation Builder</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://0d4vid.is-a.dev/" />
+    <meta property="og:title" content="Nonagni David · AI Automation Builder" />
+    <meta property="og:description" content="AI automation builder in Douala, Cameroon. n8n automation workflows, AI integration, ETL pipelines, and web dev." />
+    <meta property="og:image" content="https://0d4vid.is-a.dev/assets/images/profile.png" />
 
-    <!-- SEO management -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://0d4vid.is-a.dev/" />
+    <meta property="twitter:title" content="Nonagni David · AI Automation Builder" />
+    <meta property="twitter:description" content="AI automation builder in Douala, Cameroon. n8n automation workflows, AI integration, ETL pipelines, and web dev." />
+    <meta property="twitter:image" content="https://0d4vid.is-a.dev/assets/images/profile.png" />
 
-    <!-- Meta data -->
-    <meta name="description"
-        content="Portfolio of David Nonagni, a software engineering student specializing in web development, Python, JavaScript, and more.">
-    <meta name="keywords"
-        content="portfolio, web developer, software engineer, David Nonagni, Python, JavaScript, React, Node.js">
-    <meta name="author" content="David Nonagni">
-    <!-- Socials -->
-    <meta property="og:title" content="David Nonagni - Web Developer Portfolio">
-    <meta property="og:description"
-        content="Portfolio of David Nonagni, showcasing web development projects and skills.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://0d4vid.github.io">
-    <meta property="og:image" content="https://0d4vid.github.io/images/portfolio.png">
-    <meta property="og:image:alt" content="David Nonagni Portfolio">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
 
-    <title>David Portfolio</title>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nonagni David",
+      "jobTitle": "AI Automation Builder & Software Developer",
+      "url": "https://0d4vid.is-a.dev/",
+      "sameAs": [
+        "https://github.com/0d4vid",
+        "https://wa.me/237681178490"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Douala",
+        "addressCountry": "Cameroon"
+      },
+      "description": "AI automation builder in Douala, Cameroon. Expert in n8n workflow design, AI assistants, ETL pipelines, and web development."
+    }
+    </script>
 
-    <!-- Setting up icons -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <canvas class="ascii-field" id="ascii-field" aria-hidden="true"></canvas>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!--<script src="https://lib.yourware.so/yourware-lib.umd.js" id="yourware-lib"></script></head> -->
-
-<body>
-    <!-- Particles background -->
-    <div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="2006"
-            height="1914"></canvas></div>
-
-    <!-- Navigation -->
-    <nav class="navbar scrolled">
-        <div class="logo">Jno<span class="accent">David</span></div>
-        <div class="nav-links">
-            <a href="#home" class="">Home</a>
-            <a href="#skills" class="">Skills</a>
-            <a href="#projects" class="">Projects</a>
-            <a href="#about" class="">About</a>
-            <a href="#contact" class="active">Contact</a>
-        </div>
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="glitch-container">
-            <div class="glitch" data-text="NONAGNI David Jordan">NONAGNI David Jordan</div>
-        </div>
-        <div class="typewriter">
-            <h1>I build innovative <span class="accent" id="changingText">Websites</span> </h1>
-        </div>
-        <p class="hero-subtitle">Developeur Web &amp; Software </p>
-        <div class="cta-buttons">
-            <a href="#projects" class="btn btn-primary">Voir Projets</a>
-            <a href="#contact" class="btn btn-secondary">Me Contacter</a>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h2 class="section-title">Tech <span class="accent">Stack</span></h2>
-        <div class="skill-grid">
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fab fa-python"></i>
-                <h3>Python</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 75%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up">
-                <i class="fab fa-html5"></i>
-                <h3>HTML5</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 95%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fab fa-css3-alt"></i>
-                <h3>CSS3</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 70%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fab fa-js"></i>
-                <h3>JavaScript</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 65%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fab fa-php"></i>
-                <h3>PHP</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 15%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fab fa-java"></i>
-                <h3>Java</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 20%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-                <i class="fab fa-react"></i>
-                <h3>React</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 60%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-                <i class="fab fa-node-js"></i>
-                <h3>Node.js</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 75%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-                <i class="fab fa-figma"></i>
-                <h3>figma</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 65%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-                <i class="fab fa-c"></i>
-                <h3>Langage C</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 55%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
-                <i class="fas fa-database"></i>
-                <h3>MongoDB</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 69%"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
-                <i class="fas fa-database"></i>
-                <h3>SQL</h3>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 55%"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2 class="section-title"><span class="accent">Projets</span> Realiser</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-img">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="javascript:void(0);" class="project-link view-project-btn"
-                                data-image="images/flashart.png"><i class="fas fa-eye"></i></a>
-                            <a href="flashart-agency.com" class="project-link"><i class="fas fa-share"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Flashart website</h3>
-                    <p>Site web moderne et responsive pour flashart agency</p>
-                    <div class="project-tech">
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                        <span>ThreeJs</span>
-                        <span>SCSS</span>
-                        <span>SEO</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="javascript:void(0);" class="project-link view-project-btn"
-                                data-image="images/explora.png"><i class="fas fa-eye"></i></a>
-                            <a href="explorasarl.com" class="project-link"><i class="fas fa-share"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Explora SARL website</h3>
-                    <p>Site web pour l'entreprise d'etude geotechnique explora SARL</p>
-                    <div class="project-tech">
-                        <span>HTML/CSS</span>
-                        <span>TailWind</span>
-                        <span>JavaScript</span>
-                        <span>SEO</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="javascript:void(0);" class="project-link view-project-btn"
-                                data-image="images/academia.png"><i class="fas fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>ACADEMIA+ E-Learning</h3>
-                    <p>Une application web moderne et reponsive de e-learing</p>
-                    <div class="project-tech">
-                        <span>MongoDB</span>
-                        <span>ExpressJS</span>
-                        <span>React</span>
-                        <span>Node.js</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="javascript:void(0);" class="project-link view-project-btn"
-                                data-image="images/portfolio.png"><i class="fas fa-eye"></i></a>
-                            <a href="https://github.com/0d4vid/0d4vid.github.io" class="project-link"><i
-                                    class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>JnoDavid Portfolio</h3>
-                    <p>Mon portfolio personnel de dev</p>
-                    <div class="project-tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>Javascript</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="https://github.com/0d4vid/ReAct-Agent-David" class="project-link"><i
-                                    class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>AI Agent</h3>
-                    <p>Un bot au quel j'ai attribuer des outils afin qu'il puisse effectuer un certain nombre de taches
-                        de facon autonome</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>API</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="javascript:void(0);" class="project-link view-project-btn"
-                                data-image="images/screenshot-mobile.png"><i class="fas fa-eye"></i></a>
-                            <a href="https://github.com/0d4vid/QR-app" class="project-link"><i
-                                    class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>QR Code Generator Mobile</h3>
-                    <p>Une application mobile qui permet de transformer vos lien en code QR</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>React Native</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2 class="section-title">About <span class="accent">Me</span></h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Bonjour, je suis <span class="accent">David Nonagni</span></h3>
-                <p>je suis un développeur polyvalent passionné par la convergence entre le développement en general et
-                    l'intelligence artificielle.
-
-                    Mon approche va au-delà du code pur : je m'intéresse au cycle de vie complet d'une application. De
-                    la conception d'interfaces intuitives jusqu'à l'automatisation des déploiements, je
-                    cherche à créer des systèmes robustes et esthétiques.
-
-                    Actuellement, je concentre ma veille technologique et mes réalisations sur l'IA Générative (LLM,
-                    RAG) et la Data Science, convaincu que ces outils sont l'avenir de la résolution de problèmes
-                    complexes. Curieux et "fast learner", j'apprends continuellement pour transformer des concepts
-                    techniques en solutions concrètes et impactantes.</p>
-
-                <p>"La technologie n'est pas un outil, mais une extension de notre capacité à résoudre les vrais
-                    problèmes."</p>
-                <div class="stats">
-                    <div class="stat">
-                        <h3>3+</h3>
-                        <p>Ans d'Experience</p>
-                    </div>
-                    <div class="stat">
-                        <h3>20+</h3>
-                        <p>Projets Completés</p>
-                    </div>
-                </div>
-                <!-- <a href="#" class="btn btn-primary">Download Resume</a> -->
-            </div>
-            <div class="about-image">
-                <div class="hexagon-wrapper">
-                    <div class="hexagon"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Contact <span class="accent">Me</span></h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>nonagnijordan@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>(+237) 681 178 490 | (+237) 697 803 983</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Douala, CAMEROUN</p>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/0d4vid"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/jordan-nonagni-418350300"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/0d4vid/"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <form target="_blank" class="contact-form" action="https://formsubmit.co/66447b405067fccddbc8693cc45a9978"
-                method="POST">
-                <!-- Add hidden fields for FormSubmit configuration -->
-                <input type="hidden" name="_subject" value="New submission from your portfolio">
-                <input type="hidden" name="_next" value="https://0d4vid.github.io">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <div class="focus-border"></div>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <div class="focus-border"></div>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="subject" name="subject" placeholder="Subject">
-                    <div class="focus-border"></div>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    <div class="focus-border"></div>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="logo">Jno<span class="accent">David</span></div>
-            <p>© 2025 All Rights Reserved</p>
-        </div>
-    </footer>
-
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImage">
+    <div class="preloader" id="preloader" aria-label="Loading portfolio">
+      <svg class="preloader-cube" viewBox="0 0 60 60" stroke="#6D7582" stroke-linejoin="round" aria-hidden="true">
+        <g id="cube" fill="#ffffff">
+          <path id="base"/>
+          <path id="lid"/>
+        </g>
+      </svg>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="main.js"></script>
+    <main class="page-shell">
 
-</body>
+      <!-- ── HEADER ─────────────────────────────────── -->
+      <header class="site-header" id="top">
+        <a class="brand" href="#top" aria-label="Nonagni David home">
+          <img src="assets/icons/favicon-32x32.png" class="brand-glyph-img" alt="" aria-hidden="true" />
+          <span>Nonagni David</span>
+        </a>
 
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#services"  data-i18n="navServices">Services</a>
+          <a href="#process"   data-i18n="navProcess">Process</a>
+          <a href="#proof"     data-i18n="navProof">Proof</a>
+          <a href="#stack"     data-i18n="navStack">Stack</a>
+          <a href="#contact"   data-i18n="navContact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">FR</button>
+          <a class="header-cta" href="#contact" data-i18n="navCta">Discuss a project</a>
+        </div>
+      </header>
+
+      <!-- ── HERO ───────────────────────────────────── -->
+      <section class="hero section-band" aria-labelledby="hero-title">
+
+        <!-- Canvas for animated ASCII background image -->
+        <canvas class="hero-ascii-canvas" id="hero-ascii-canvas" aria-hidden="true"></canvas>
+
+        <!-- Left: cinematic copy -->
+        <div class="hero-copy">
+          <div class="hero-name" aria-hidden="true">
+            <div class="hero-name-clip"><span class="hero-name-a">NONAGNI</span></div>
+            <div class="hero-name-clip"><span class="hero-name-b">DAVID</span></div>
+          </div>
+
+          <h1 id="hero-title" data-i18n="heroTitle">Build systems. Automate work.</h1>
+          <p class="hero-lead">
+            <span data-i18n="heroLeadPrefix">I help teams with </span>
+            <span class="typewriter-text" data-typewriter></span>
+            <span class="typing-cursor" aria-hidden="true"></span>
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary"   href="mailto:nonagnijordan@gmail.com" data-i18n="heroPrimary">Discuss a project</a>
+            <a class="button button-secondary" href="#services" data-i18n="heroSecondary">Explore services</a>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ── SERVICES / CAPABILITIES ────────────────── -->
+      <section class="section-band services-section" id="services" aria-labelledby="services-title">
+        <div class="section-head" data-aos="fade-up">
+          <p class="section-index">/ 01</p>
+          <div>
+            <h2 id="services-title" data-i18n="servicesTitle">Capabilities.</h2>
+            <p data-i18n="servicesLead">Each offer is scoped to reduce manual work, connect existing tools, and leave you with systems that can be maintained after delivery.</p>
+          </div>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="service-card-header">
+              <span class="card-num">01</span>
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="5" r="3"></circle>
+                <circle cx="5" cy="19" r="3"></circle>
+                <circle cx="19" cy="19" r="3"></circle>
+                <path d="M5 16v-3a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v3"></path>
+                <path d="M12 8v4"></path>
+              </svg>
+            </div>
+            <h3 data-i18n="serviceN8nTitle">n8n automation</h3>
+            <p data-i18n="serviceN8nText">Workflow design for lead handling, reporting, notifications, data sync, approvals, and internal operations.</p>
+          </article>
+          <article class="service-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="service-card-header">
+              <span class="card-num">02</span>
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="12" cy="2" r="1"></circle>
+                <circle cx="12" cy="22" r="1"></circle>
+                <circle cx="2" cy="12" r="1"></circle>
+                <circle cx="22" cy="12" r="1"></circle>
+              </svg>
+            </div>
+            <h3 data-i18n="serviceAiTitle">AI integration</h3>
+            <p data-i18n="serviceAiText">AI assistants, RAG patterns, document processing, prompt workflows, and integrations that fit existing products.</p>
+          </article>
+          <article class="service-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="service-card-header">
+              <span class="card-num">03</span>
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+              </svg>
+            </div>
+            <h3 data-i18n="serviceEtlTitle">ETL and data warehouse</h3>
+            <p data-i18n="serviceEtlText">Data extraction, cleaning, transformation, warehouse-ready structures, analytics foundations, and operational dashboards.</p>
+          </article>
+          <article class="service-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="service-card-header">
+              <span class="card-num">04</span>
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+                <line x1="14" y1="4" x2="10" y2="20"></line>
+              </svg>
+            </div>
+            <h3 data-i18n="serviceWebTitle">Web development</h3>
+            <p data-i18n="serviceWebText">Responsive websites, frontend interfaces, backend services, APIs, and practical product experiences.</p>
+          </article>
+          <article class="service-card" data-aos="fade-up" data-aos-delay="320">
+            <div class="service-card-header">
+              <span class="card-num">05</span>
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3 data-i18n="serviceAppTitle">App development</h3>
+            <p data-i18n="serviceAppText">Mobile and desktop application support, product prototypes, workflow tools, and internal apps.</p>
+          </article>
+          <article class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card-header">
+              <span class="card-num">06</span>
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 data-i18n="serviceDataTitle">Data science</h3>
+            <p data-i18n="serviceDataText">Exploratory analysis, ML prototypes, model evaluation, dashboards, and decisions supported by structured evidence.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ── PROCESS ─────────────────────────────────── -->
+      <section class="section-band process-section" id="process" aria-labelledby="process-title">
+        <div class="section-head compact" data-aos="fade-up">
+          <p class="section-index">/ 02</p>
+          <div>
+            <h2 id="process-title" data-i18n="processTitle">Process.</h2>
+          </div>
+        </div>
+
+        <div class="process-carousel-container" data-aos="fade-up">
+          <!-- Left: Rotating Wheel -->
+          <div class="process-wheel-wrapper">
+            <div class="process-wheel" id="process-wheel">
+              <button class="process-wheel-node active" data-index="0" style="--node-angle: 0deg;" type="button" aria-label="Step 1: Diagnose">
+                <span class="node-num">01</span>
+                <span class="node-label" data-i18n="processStep0">diagnose</span>
+              </button>
+              <button class="process-wheel-node" data-index="1" style="--node-angle: 90deg;" type="button" aria-label="Step 2: Design">
+                <span class="node-num">02</span>
+                <span class="node-label" data-i18n="processStep1">design</span>
+              </button>
+              <button class="process-wheel-node" data-index="2" style="--node-angle: 180deg;" type="button" aria-label="Step 3: Build">
+                <span class="node-num">03</span>
+                <span class="node-label" data-i18n="processStep2">build</span>
+              </button>
+              <button class="process-wheel-node" data-index="3" style="--node-angle: 270deg;" type="button" aria-label="Step 4: Stabilize">
+                <span class="node-num">04</span>
+                <span class="node-label" data-i18n="processStep3">stabilize</span>
+              </button>
+            </div>
+            <div class="process-wheel-hub">
+              <span class="hub-glyph">0d</span>
+            </div>
+          </div>
+
+          <!-- Right: Details Card -->
+          <div class="process-details-panel">
+            <p class="process-index-kicker">/ process step <span id="process-step-num">01</span></p>
+            <h3 id="process-step-title" data-i18n="processStep0">diagnose</h3>
+            <p id="process-step-text" data-i18n="processDiagnose">Map the current workflow, data sources, manual steps, constraints, and real success criteria.</p>
+            
+            <div class="process-carousel-nav">
+              <button class="nav-arrow prev" id="process-prev" type="button" aria-label="Previous step">←</button>
+              <button class="nav-arrow next" id="process-next" type="button" aria-label="Next step">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PROOF / WORK ────────────────────────────── -->
+      <section class="section-band proof-section" id="proof" aria-labelledby="proof-title">
+        <div class="section-head" data-aos="fade-up">
+          <p class="section-index">/ 03</p>
+          <div>
+            <h2 id="proof-title" data-i18n="proofTitle">Work proof.</h2>
+            <p data-i18n="proofLead">These frames are ready for screenshots, dashboards, and case study details. Click on a project card to view detailed specifications.</p>
+          </div>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card" data-project-idx="0" data-aos="zoom-in">
+            <div class="proof-img" role="img" aria-label="Llama 3 Fine-Tuning screenshot">
+              <img src="assets/screenshots/-fine-tune-llama-3-8b-with-v0-sg5jl5r2xpcd1.webp" alt="Llama 3 Fine-Tuning" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">LLAMA 3 FINE-TUNING</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_01</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_01</p>
+              <h3 data-i18n="projectTitle0">Llama 3 Fine-Tuning</h3>
+              <span class="proof-tag" data-i18n="projectTag0">AI & Data</span>
+            </div>
+          </article>
+ 
+          <article class="proof-card" data-project-idx="1" data-aos="zoom-in" data-aos-delay="50">
+            <div class="proof-img" role="img" aria-label="RAG Chatbot screenshot">
+              <img src="assets/screenshots/RAG - system for a company chatbot.webp" alt="RAG Chatbot" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">RAG CHATBOT</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_02</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_02</p>
+              <h3 data-i18n="projectTitle1">RAG Chatbot</h3>
+              <span class="proof-tag" data-i18n="projectTag1">AI Integration</span>
+            </div>
+          </article>
+ 
+          <article class="proof-card" data-project-idx="2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="proof-img" role="img" aria-label="Flashart Creative Agency screenshot">
+              <img src="assets/screenshots/Screenshot 2025-12-06 at 03-03-30 Flashart Creative Agency in Douala Cameroon.png" alt="Flashart Agency" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">FLASHART AGENCY</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_03</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_03</p>
+              <h3 data-i18n="projectTitle2">Flashart Agency</h3>
+              <span class="proof-tag" data-i18n="projectTag2">Web Dev</span>
+            </div>
+          </article>
+ 
+          <article class="proof-card hidden" data-project-idx="3" data-aos="zoom-in" data-aos-delay="150">
+            <div class="proof-img" role="img" aria-label="Explora Sarl screenshot">
+              <img src="assets/screenshots/Screenshot 2025-12-06 at 03-03-48 Explora - Fondations Sûres.png" alt="Explora SARL" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">EXPLORA SARL</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_04</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_04</p>
+              <h3 data-i18n="projectTitle3">Explora SARL</h3>
+              <span class="proof-tag" data-i18n="projectTag3">Web Dev</span>
+            </div>
+          </article>
+ 
+          <article class="proof-card hidden" data-project-idx="4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="proof-img" role="img" aria-label="Restaurant Le Messager screenshot">
+              <img src="assets/screenshots/Screenshot 2026-01-13 at 15-56-45 Restaurant Le Messager.png" alt="Le Messager" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">LE MESSAGER</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_05</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_05</p>
+              <h3 data-i18n="projectTitle4">Le Messager Website</h3>
+              <span class="proof-tag" data-i18n="projectTag4">UI/UX Proposal</span>
+            </div>
+          </article>
+ 
+          <article class="proof-card hidden" data-project-idx="5" data-aos="zoom-in" data-aos-delay="250">
+            <div class="proof-img" role="img" aria-label="Okuko Fast-Food screenshot">
+              <img src="assets/screenshots/Screenshot 2026-01-14 at 13-38-55 Okuko Fast-Food Good-Food Camerounais.png" alt="Okuko Fast-Food" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">OKUKO FAST-FOOD</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_06</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_06</p>
+              <h3 data-i18n="projectTitle5">Okuko Fast-Food</h3>
+              <span class="proof-tag" data-i18n="projectTag5">UI/UX Proposal</span>
+            </div>
+          </article>
+ 
+          <article class="proof-card hidden" data-project-idx="6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="proof-img" role="img" aria-label="NSK Service Construction screenshot">
+              <img src="assets/screenshots/Screenshot 2026-06-10 at 10-46-18 NSK Service Construction supervision renovation et au Cameroun.png" alt="NSK Services" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">NSK SERVICES</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_07</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_07</p>
+              <h3 data-i18n="projectTitle6">NSK Services</h3>
+              <span class="proof-tag" data-i18n="projectTag6">Web Dev</span>
+            </div>
+          </article>
+ 
+          <article class="proof-card hidden" data-project-idx="7" data-aos="zoom-in" data-aos-delay="350">
+            <div class="proof-img" role="img" aria-label="Portfolio Website screenshot">
+              <img src="assets/screenshots/Screenshot 2026-06-10 at 10-48-35 Nonagni David · AI Automation Builder.png" alt="Portfolio" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">PORTFOLIO SITE</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_08</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_08</p>
+              <h3 data-i18n="projectTitle7">Portfolio Site</h3>
+              <span class="proof-tag" data-i18n="projectTag7">Web Dev</span>
+            </div>
+          </article>
+ 
+          <article class="proof-card hidden" data-project-idx="8" data-aos="zoom-in" data-aos-delay="400">
+            <div class="proof-img" role="img" aria-label="Telegram Bot screenshot">
+              <img src="assets/screenshots/Telegram-bot-python.png" alt="Telegram Bot" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">TELEGRAM BOT</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_09</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_09</p>
+              <h3 data-i18n="projectTitle8">Telegram Bot</h3>
+              <span class="proof-tag" data-i18n="projectTag8">Automation</span>
+            </div>
+          </article>
+ 
+          <article class="proof-card hidden" data-project-idx="9" data-aos="zoom-in" data-aos-delay="450">
+            <div class="proof-img" role="img" aria-label="Social Media Content Machine screenshot">
+              <img src="assets/screenshots/i-built-a-fully-automated-social-media-content-machine-that-v0-azb35unr1bre1.webp" alt="Content Machine" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">CONTENT MACHINE</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_10</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_10</p>
+              <h3 data-i18n="projectTitle9">Content Machine</h3>
+              <span class="proof-tag" data-i18n="projectTag9">Automation</span>
+            </div>
+          </article>
+ 
+          <article class="proof-card hidden" data-project-idx="10" data-aos="zoom-in" data-aos-delay="500">
+            <div class="proof-img" role="img" aria-label="WhatsApp Bot screenshot">
+              <img src="assets/screenshots/portada_como_poner_un_bot_en_whatsapp.webp" alt="WhatsApp Bot" loading="lazy" />
+              <span class="proof-img-label" aria-hidden="true">WHATSAPP BOT</span>
+              <span class="proof-img-idx"   aria-hidden="true">case_11</span>
+            </div>
+            <div class="proof-card-body">
+              <p class="proof-num" aria-hidden="true">case_11</p>
+              <h3 data-i18n="projectTitle10">WhatsApp Bot</h3>
+              <span class="proof-tag" data-i18n="projectTag10">Automation</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="proof-actions" data-aos="fade-up">
+          <button class="button button-secondary" id="show-more-proofs" type="button" data-i18n="showMoreProofs">Show more projects</button>
+        </div>
+      </section>
+
+      <!-- ── ABOUT ────────────────────────────────────── -->
+      <section class="section-band about-section" id="about" aria-labelledby="about-title">
+        <div class="section-head compact" data-aos="fade-up">
+          <p class="section-index">/ 04</p>
+          <div>
+            <h2 id="about-title" data-i18n="aboutTitle">About me.</h2>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: Profile picture with premium frame -->
+          <div class="about-portrait-wrapper" data-aos="fade-right">
+            <div class="about-portrait-frame">
+              <img src="assets/images/profile.png" alt="Nonagni David" class="about-portrait-img" />
+              <div class="frame-corner tl"></div>
+              <div class="frame-corner tr"></div>
+              <div class="frame-corner bl"></div>
+              <div class="frame-corner br"></div>
+            </div>
+          </div>
+
+          <!-- Right: Profile details & stats -->
+          <div class="about-content" data-aos="fade-left">
+            <h3 data-i18n="aboutBioTitle">Architecting automated flows and practical AI products.</h3>
+            <p class="about-bio" data-i18n="aboutBioText">
+              Based in Douala, Cameroon, I work as an AI automation builder and software developer. I help businesses eliminate repetitive manual workflows, connect disconnected SaaS applications, build custom data analysis systems, and deploy custom AI integrations that solve real business needs.
+            </p>
+            
+            <!-- Analytics Grid -->
+            <div class="about-stats-grid">
+              <div class="stat-badge">
+                <span class="stat-num">3+</span>
+                <span class="stat-label" data-i18n="statYears">years of experience</span>
+              </div>
+              <div class="stat-badge">
+                <span class="stat-num">40+</span>
+                <span class="stat-label" data-i18n="statProjects">projects completed</span>
+              </div>
+              <div class="stat-badge">
+                <span class="stat-num">10+</span>
+                <span class="stat-label" data-i18n="statCommunity">coding community members</span>
+              </div>
+              <div class="stat-badge">
+                <span class="stat-num">1</span>
+                <span class="stat-label" data-i18n="statEducation">bachelor & bts degree</span>
+              </div>
+            </div>
+
+            <!-- Background details quick highlights -->
+            <div class="about-background-highlights">
+              <div class="highlight-item">
+                <h4 data-i18n="orbitTitle">Orbit SARL</h4>
+                <p data-i18n="orbitTextShort">AI & Software Intern - Applied machine learning models and business tool integration.</p>
+              </div>
+              <div class="highlight-item">
+                <h4 data-i18n="codingHqTitle">Coding HQ</h4>
+                <p data-i18n="codingHqTextShort">CTO & Co-founder - Led engineering training, community mentoring, and web projects.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── STACK ──────────────────────────────────── -->
+      <section class="section-band stack-section" id="stack" aria-labelledby="stack-title">
+        <div class="section-head" data-aos="fade-up">
+          <p class="section-index">/ 05</p>
+          <div>
+            <h2 id="stack-title" data-i18n="stackTitle">Stack.</h2>
+          </div>
+        </div>
+
+        <div class="stack-board" data-aos="fade-up">
+          <div class="stack-group">
+            <h3 data-i18n="stackAutomation">Automation</h3>
+            <ul class="logo-grid" aria-label="Automation stack">
+              <li><img src="https://cdn.simpleicons.org/n8n"      alt="" loading="lazy" /><span>n8n</span></li>
+              <li><img src="https://cdn.simpleicons.org/zapier"   alt="" loading="lazy" /><span>Zapier</span></li>
+              <li><img src="https://cdn.simpleicons.org/postman"  alt="" loading="lazy" /><span>Postman</span></li>
+              <li><img src="https://cdn.simpleicons.org/airtable" alt="" loading="lazy" /><span>Airtable</span></li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 data-i18n="stackAi">AI and data</h3>
+            <ul class="logo-grid" aria-label="AI and data stack">
+              <li><img src="https://cdn.simpleicons.org/python"       alt="" loading="lazy" /><span>Python</span></li>
+              <li><img src="https://cdn.simpleicons.org/pytorch"      alt="" loading="lazy" /><span>PyTorch</span></li>
+              <li><img src="https://cdn.simpleicons.org/tensorflow"   alt="" loading="lazy" /><span>TensorFlow</span></li>
+              <li><img src="https://cdn.simpleicons.org/scikitlearn"  alt="" loading="lazy" /><span>scikit-learn</span></li>
+              <li><img src="https://cdn.simpleicons.org/huggingface"  alt="" loading="lazy" /><span>Hugging Face</span></li>
+              <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"       alt="" loading="lazy" /><span>OpenAI</span></li>
+              <li><img src="https://cdn.simpleicons.org/postgresql"   alt="" loading="lazy" /><span>PostgreSQL</span></li>
+              <li><img src="https://cdn.simpleicons.org/mongodb"      alt="" loading="lazy" /><span>MongoDB</span></li>
+              <li><img src="https://cdn.simpleicons.org/pandas"       alt="" loading="lazy" /><span>Pandas</span></li>
+              <li><img src="https://cdn.simpleicons.org/numpy"        alt="" loading="lazy" /><span>NumPy</span></li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 data-i18n="stackWeb">Web and apps</h3>
+            <ul class="logo-grid" aria-label="Web and app stack">
+              <li><img src="https://cdn.simpleicons.org/javascript"  alt="" loading="lazy" /><span>JavaScript</span></li>
+              <li><img src="https://cdn.simpleicons.org/typescript"  alt="" loading="lazy" /><span>TypeScript</span></li>
+              <li><img src="https://cdn.simpleicons.org/react"       alt="" loading="lazy" /><span>React</span></li>
+              <li><img src="https://cdn.simpleicons.org/html5"       alt="" loading="lazy" /><span>HTML5</span></li>
+              <li><img src="https://cdn.simpleicons.org/css"          alt="" loading="lazy" /><span>CSS</span></li>
+              <li><img src="https://cdn.simpleicons.org/django"      alt="" loading="lazy" /><span>Django</span></li>
+              <li><img src="https://cdn.simpleicons.org/nodedotjs"   alt="" loading="lazy" /><span>Node.js</span></li>
+              <li><img src="https://cdn.simpleicons.org/php"         alt="" loading="lazy" /><span>PHP</span></li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 data-i18n="stackTools">Tools</h3>
+            <ul class="logo-grid" aria-label="Tools stack">
+              <li><img src="https://cdn.simpleicons.org/git"               alt="" loading="lazy" /><span>Git</span></li>
+              <li><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"  alt="" loading="lazy" /><span>VS Code</span></li>
+              <li><img src="https://cdn.simpleicons.org/figma"             alt="" loading="lazy" /><span>Figma</span></li>
+              <li><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Canva_logo.svg"             alt="" loading="lazy" /><span>Canva</span></li>
+              <li><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"    alt="" loading="lazy" /><span>Photoshop</span></li>
+              <li><img src="https://cdn.simpleicons.org/github"            alt="" loading="lazy" /><span>GitHub</span></li>
+              <li><img src="https://cdn.simpleicons.org/docker"            alt="" loading="lazy" /><span>Docker</span></li>
+              <li><img src="https://cdn.simpleicons.org/linux"             alt="" loading="lazy" /><span>Linux</span></li>
+              <li><img src="https://cdn.simpleicons.org/notion"            alt="" loading="lazy" /><span>Notion</span></li>
+              <li><img src="https://cdn.simpleicons.org/slack"             alt="" loading="lazy" /><span>Slack</span></li>
+              <li><img src="https://cdn.simpleicons.org/jira"              alt="" loading="lazy" /><span>Jira</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CONTACT ─────────────────────────────────── -->
+      <section class="section-band contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel" data-aos="fade-up">
+          <p class="section-index">/ contact</p>
+          <h2 id="contact-title" data-i18n="contactTitle">Let's build.</h2>
+          <p data-i18n="contactLead">Reach out for automation, AI integration, ETL, web/app builds, data analysis, or recruiter conversations.</p>
+          <div class="contact-actions">
+            <a class="button button-primary"   href="mailto:nonagnijordan@gmail.com">nonagnijordan@gmail.com</a>
+            <a class="button button-secondary" href="https://wa.me/237681178490">WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Details Modal -->
+      <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-project-title">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+          <button class="modal-close" id="modal-close" type="button" aria-label="Close modal">×</button>
+          <div class="modal-body" id="modal-body">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-container">
+          <p class="footer-copy">© 2026 Nonagni David. <span data-i18n="footerRights">Tous droits réservés.</span></p>
+          <div class="footer-actions">
+            <button class="footer-lang" type="button" data-lang-toggle data-i18n="footerLang">Passer en français</button>
+            <a href="#top" class="back-to-top" data-i18n="backToTop">Retour en haut ↑</a>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+  </body>
 </html>

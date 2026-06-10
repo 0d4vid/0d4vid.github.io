@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://0d4vid.is-a.dev/sitemap.xml
