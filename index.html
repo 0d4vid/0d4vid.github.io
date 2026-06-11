@@ -61,12 +61,12 @@
     <link rel="preconnect" href="https://unpkg.com" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.min.css" />
   </head>
   <body>
     <canvas class="ascii-field" id="ascii-field" aria-hidden="true"></canvas>
 
-    <div class="preloader" id="preloader" aria-label="Loading portfolio">
+    <div class="preloader" id="preloader" aria-label="Loading portfolio" style="position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0c0f12;">
       <svg class="preloader-cube" viewBox="0 0 60 60" stroke="#6D7582" stroke-linejoin="round" aria-hidden="true">
         <g id="cube" fill="#ffffff">
           <path id="base"/>
@@ -441,7 +441,7 @@
           <!-- Left: Profile picture with premium frame -->
           <div class="about-portrait-wrapper" data-aos="fade-right">
             <div class="about-portrait-frame">
-              <img src="assets/images/profile.avif" alt="Nonagni David" class="about-portrait-img" />
+              <img src="assets/images/profile.avif" alt="Nonagni David" class="about-portrait-img" loading="lazy" />
               <div class="frame-corner tl"></div>
               <div class="frame-corner tr"></div>
               <div class="frame-corner bl"></div>
@@ -596,6 +596,6 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/script.min.js" defer></script>
   </body>
 </html>
