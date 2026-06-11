@@ -904,7 +904,7 @@ const projectsData = [
       desc: "Implémentation d'un pipeline RAG (Génération augmentée par récupération) pour un chatbot d'entreprise avec Mistral LLM et la base vectorielle ChromaDB."
     },
     tools: ["Python", "ChromaDB", "Mistral API", "LangChain"],
-    image: "assets/screenshots/RAG - system for a company chatbot.webp"
+    image: "assets/screenshots/RAG - system for a company chatbot.avif"
   },
   {
     en: {
@@ -918,7 +918,7 @@ const projectsData = [
       desc: "Site web pour une agence créative développé avec SCSS et Vanilla JS. Intègre une optimisation avancée du SEO et du temps de chargement."
     },
     tools: ["HTML5", "SCSS", "JavaScript", "Tailwind CSS"],
-    image: "assets/screenshots/Screenshot 2025-12-06 at 03-03-30 Flashart Creative Agency in Douala Cameroon.png"
+    image: "assets/screenshots/Screenshot 2025-12-06 at 03-03-30 Flashart Creative Agency in Douala Cameroon.avif"
   },
   {
     en: {
@@ -932,7 +932,7 @@ const projectsData = [
       desc: "Site d'entreprise pour une société d'études géotechniques au Cameroun, avec une présentation épurée et des formulaires de contact. Lien : explorasarl.com."
     },
     tools: ["HTML5", "CSS", "JavaScript", "Tailwind CSS"],
-    image: "assets/screenshots/Screenshot 2025-12-06 at 03-03-48 Explora - Fondations Sûres.png"
+    image: "assets/screenshots/Screenshot 2025-12-06 at 03-03-48 Explora - Fondations Sûres.avif"
   },
   {
     en: {
@@ -946,7 +946,7 @@ const projectsData = [
       desc: "Proposition de design frontend pour le Restaurant Le Messager à Douala, mettant en valeur les menus et le système de réservation."
     },
     tools: ["HTML5", "CSS", "JavaScript", "Tailwind CSS"],
-    image: "assets/screenshots/Screenshot 2026-01-13 at 15-56-45 Restaurant Le Messager.png"
+    image: "assets/screenshots/Screenshot 2026-01-13 at 15-56-45 Restaurant Le Messager.avif"
   },
   {
     en: {
@@ -960,7 +960,7 @@ const projectsData = [
       desc: "Proposition de site internet moderne pour la restauration rapide Okuko Fast-Food à Douala, Cameroun."
     },
     tools: ["HTML5", "CSS", "JavaScript", "Tailwind CSS"],
-    image: "assets/screenshots/Screenshot 2026-01-14 at 13-38-55 Okuko Fast-Food Good-Food Camerounais.png"
+    image: "assets/screenshots/Screenshot 2026-01-14 at 13-38-55 Okuko Fast-Food Good-Food Camerounais.avif"
   },
   {
     en: {
@@ -974,7 +974,7 @@ const projectsData = [
       desc: "Proposition de site pour NSK Services, superviseur de travaux de construction et rénovation au Cameroun. Hébergé sur nsk-services.netlify.app."
     },
     tools: ["HTML5", "CSS", "JavaScript", "Tailwind CSS"],
-    image: "assets/screenshots/Screenshot 2026-06-10 at 10-46-18 NSK Service Construction supervision renovation et au Cameroun.png"
+    image: "assets/screenshots/Screenshot 2026-06-10 at 10-46-18 NSK Service Construction supervision renovation et au Cameroun.avif"
   },
   {
     en: {
@@ -988,7 +988,7 @@ const projectsData = [
       desc: "Site de portfolio dynamique présentant mes compétences, des étapes de processus circulaires interactives et des études de cas."
     },
     tools: ["HTML5", "CSS", "JavaScript", "GSAP", "AOS"],
-    image: "assets/screenshots/Screenshot 2026-06-10 at 10-48-35 Nonagni David · AI Automation Builder.png"
+    image: "assets/screenshots/Screenshot 2026-06-10 at 10-48-35 Nonagni David · AI Automation Builder.avif"
   },
   {
     en: {
