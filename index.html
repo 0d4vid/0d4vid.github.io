@@ -57,16 +57,48 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" /></noscript>
     <link rel="preconnect" href="https://unpkg.com" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="assets/css/style.min.css" />
+    <link class="aos-css" rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /></noscript>
+    <link rel="preload" href="assets/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/css/style.min.css" /></noscript>
+
+    <!-- Critical CSS for Preloader to prevent FOUC & CLS -->
+    <style>
+      .preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background: #0c0f12;
+      }
+      .preloader p {
+        margin: 0;
+        color: #4b5563;
+        font-family: monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .preloader-cube {
+        overflow: visible;
+        width: clamp(280px, 30vw, 420px);
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
+    </style>
   </head>
   <body>
     <canvas class="ascii-field" id="ascii-field" aria-hidden="true"></canvas>
 
-    <div class="preloader" id="preloader" aria-label="Loading portfolio" style="position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0c0f12;">
+    <div class="preloader" id="preloader" aria-label="Loading portfolio">
       <svg class="preloader-cube" viewBox="0 0 60 60" stroke="#6D7582" stroke-linejoin="round" aria-hidden="true">
         <g id="cube" fill="#ffffff">
           <path id="base"/>
