@@ -382,11 +382,11 @@ function initPreloader() {
   window.addEventListener("load", () => {
     setTimeout(() => {
       running = false;
-      preloader.style.transition = "opacity 520ms ease";
+      preloader.style.transition = "opacity 360ms ease";
       preloader.style.pointerEvents = "none";
       preloader.style.opacity    = "0";
-      setTimeout(() => preloader.remove(), 540);
-    }, 900);
+      setTimeout(() => preloader.remove(), 380);
+    }, 350);
   });
 }
 
@@ -473,7 +473,7 @@ function initGsap() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const tl = gsap.timeline({ delay: 1.05 });
+  const tl = gsap.timeline({ delay: 0.4 });
 
   // ① Initialize background variables to clear state
   gsap.set(".hero", {
@@ -1126,7 +1126,7 @@ function initProjectModal() {
   const preloader = document.getElementById("preloader");
   if (preloader) {
     const waitForLoad = () => {
-      setTimeout(initGsap, 960);
+      setTimeout(initGsap, 400);
     };
     if (document.readyState === "complete") {
       waitForLoad();
