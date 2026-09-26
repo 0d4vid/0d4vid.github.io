@@ -397,6 +397,37 @@ function initPreloader() {
 }
 
 /* ── NAV — scroll spy + mobile toggle ───────────────────── */
+function initHeroHover() {
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+
+  let frame = 0;
+  let x = 0;
+  let y = 0;
+
+  hero.addEventListener("pointermove", (event) => {
+    if (event.pointerType === "touch") return;
+    x = event.clientX;
+    y = event.clientY;
+    if (frame) return;
+
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      const rect = hero.getBoundingClientRect();
+      hero.style.setProperty("--mouse-x", (x - rect.left) + "px");
+      hero.style.setProperty("--mouse-y", (y - rect.top) + "px");
+    });
+  }, { passive: true });
+
+  hero.addEventListener("pointerleave", () => {
+    if (frame) cancelAnimationFrame(frame);
+    frame = 0;
+    hero.style.setProperty("--mouse-x", "-999px");
+    hero.style.setProperty("--mouse-y", "-999px");
+  });
+}
+
+/* ?? NAV ? scroll spy + mobile toggle ????????????????????? */
 function initNav() {
   const header  = document.querySelector(".site-header");
   const toggle  = document.querySelector(".menu-toggle");
@@ -728,6 +759,7 @@ function initProjectModal() {
 /* ── BOOT ────────────────────────────────────────────────── */
 (function init() {
   initPreloader();
+  initHeroHover();
   initNav();
   initLangToggle();
   initProjectModal();
