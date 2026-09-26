@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════
    NONAGNI DAVID — PORTFOLIO  ·  script.js
-   Sections: i18n · Preloader · Canvas · GSAP · Nav
+   Sections: i18n · Preloader · Nav · Projects
    ═══════════════════════════════════════════════════════════ */
 
 /* ── CONTENT (bilingual) ─────────────────────────────────── */
@@ -396,76 +396,6 @@ function initPreloader() {
   }
 }
 
-/* ── GSAP + SCROLL ───────────────────────────────────────── */
-function initGsap() {
-  if (typeof gsap === "undefined") return;
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  const tl = gsap.timeline();
-
-  // Keep the final acrylic background without repainting a full-screen blur each frame.
-
-  // Header entrance
-  tl.from(".site-header", {
-    y: -36,
-    opacity: 0,
-    duration: 0.4,
-    ease: "power3.out",
-  }, 0);
-
-  /* Film-strip metadata bars fade in */
-  tl.from(".hero-strip-top span, .hero-strip-bottom span", {
-    opacity: 0,
-    y: -6,
-    duration: 0.35,
-    stagger: 0.08,
-    ease: "power2.out",
-  }, 0.05);
-
-  /* Cinematic name lines — title-card slide-up reveal */
-  tl.from(".hero-name-a, .hero-name-b", {
-    y: "130%",
-    duration: 0.65,
-    stagger: 0.1,
-    ease: "expo.out",
-  }, 0.05);
-
-  /* Sub-copy: kicker, h1, lead, buttons */
-  tl.from(".ascii-kicker, #hero-title, .hero-lead, .hero-actions", {
-    y: 28,
-    opacity: 0,
-    duration: 0.45,
-    stagger: 0.1,
-    ease: "power3.out",
-  }, 0.25);
-
-  /* Frame corners pop in */
-  tl.from(".hero-corner", {
-    scale: 0,
-    opacity: 0,
-    duration: 0.4,
-    stagger: 0.06,
-    ease: "back.out(2)",
-    transformOrigin: "center center",
-  }, 0.4);
-
-  /* Scroll-triggered section bands */
-  gsap.utils.toArray(".section-band:not(.hero)").forEach((section) => {
-    gsap.from(section, {
-      scrollTrigger: {
-        trigger: section,
-        start: "top 88%",
-        toggleActions: "play none none reverse",
-      },
-      y: 32,
-      opacity: 0,
-      duration: 0.75,
-      ease: "power2.out",
-    });
-  });
-}
-
 /* ── NAV — scroll spy + mobile toggle ───────────────────── */
 function initNav() {
   const header  = document.querySelector(".site-header");
@@ -825,8 +755,6 @@ function initProjectModal() {
   }
   setLang(initialLang);
 
-  /* Start the entrance once layout is ready, independent of late image requests. */
-  requestAnimationFrame(initGsap);
 })();
 
 /* Short scene entrances; content remains visible if animation is unavailable. */
