@@ -401,6 +401,8 @@ function initCanvas() {
   let cols, rows, grid = [];
   let mouseX = -1, mouseY = -1;
   let raf;
+  let lastDraw = 0;
+  const frameInterval = 1000 / 24;
 
   function resize() {
     canvas.width  = window.innerWidth;
@@ -425,6 +427,9 @@ function initCanvas() {
   });
 
   function draw(ts) {
+    raf = requestAnimationFrame(draw);
+    if (ts - lastDraw < frameInterval) return;
+    lastDraw = ts;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "12px 'JetBrains Mono', monospace";
 
@@ -455,7 +460,6 @@ function initCanvas() {
       ctx.fillText(cell.char, col, row);
     });
 
-    raf = requestAnimationFrame(draw);
   }
 
   resize();
@@ -662,6 +666,8 @@ function initHeroAsciiBg() {
   let mouseX = -9999, mouseY = -9999;
   let raf;
   let time = 0;
+  let lastDraw = 0;
+  const frameInterval = 1000 / 24;
 
   function resize() {
     if (!imgLoaded) return;
@@ -728,11 +734,11 @@ function initHeroAsciiBg() {
     });
   }
 
-  function draw() {
-    if (!imgLoaded) {
-      raf = requestAnimationFrame(draw);
-      return;
-    }
+  function draw(ts) {
+    raf = requestAnimationFrame(draw);
+    if (!imgLoaded || ts - lastDraw < frameInterval) return;
+    const elapsed = lastDraw ? ts - lastDraw : 1000 / 60;
+    lastDraw = ts;
 
     // Dynamic resize check to recover from 0-size boot layouts (e.g. preloader active)
     const rect = canvas.parentNode.getBoundingClientRect();
@@ -741,11 +747,10 @@ function initHeroAsciiBg() {
     }
 
     if (cols === 0 || rows === 0) {
-      raf = requestAnimationFrame(draw);
       return;
     }
 
-    time += 1;
+    time += elapsed / (1000 / 60);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "bold 10px 'JetBrains Mono', monospace";
     ctx.textBaseline = "top";
@@ -768,7 +773,6 @@ function initHeroAsciiBg() {
     try {
       octx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, cols, rows);
     } catch (e) {
-      raf = requestAnimationFrame(draw);
       return;
     }
 
@@ -867,7 +871,6 @@ function initHeroAsciiBg() {
       }
     }
 
-    raf = requestAnimationFrame(draw);
   }
 
   window.addEventListener("resize", resize);
