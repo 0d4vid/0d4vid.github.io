@@ -56,7 +56,8 @@
     }
     </script>
 
-    <link rel="preload" href="assets/images/background.avif" as="image" type="image/avif" fetchpriority="high" />
+    <link rel="preload" href="assets/images/background-mobile.avif" as="image" type="image/avif" media="(max-width: 600px)" fetchpriority="high" />
+    <link rel="preload" href="assets/images/background.avif" as="image" type="image/avif" media="(min-width: 601px)" fetchpriority="high" />
     <link rel="preload" href="assets/fonts/big-shoulders-display-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/syne-latin.woff2" as="font" type="font/woff2" crossorigin />
     <style>
@@ -68,7 +69,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="stylesheet" href="assets/css/style.min.css" />
 
-    <link rel="stylesheet" href="assets/css/portfolio-v2.css?v=11" />
+    <link rel="stylesheet" href="assets/css/portfolio-v2.css?v=12" />
 
     <!-- Critical CSS for Preloader to prevent FOUC & CLS -->
     <style>
@@ -140,7 +141,10 @@
 
       <!-- ── HERO ───────────────────────────────────── -->
       <section class="hero section-band" aria-labelledby="hero-title">
-        <img class="hero-bg" src="assets/images/background.avif" alt="" fetchpriority="high" decoding="async" />
+        <picture>
+          <source media="(max-width: 600px)" srcset="assets/images/background-mobile.avif" />
+          <img class="hero-bg" src="assets/images/background.avif" alt="" fetchpriority="high" decoding="async" />
+        </picture>
 
         <!-- Left: cinematic copy -->
         <div class="hero-copy">
