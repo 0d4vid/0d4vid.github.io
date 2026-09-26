@@ -1,73 +1,29 @@
-# Nonagni David — AI Automation Builder Portfolio
+﻿# Nonagni David's portfolio
 
-A premium, interactive personal portfolio website designed with a B&W cinematic aesthetic, editorial typography, and high-performance micro-interactions.
+Portfolio v2 redesigns the sections below the existing hero. It uses a light monochrome palette, three service groups, three featured projects, an expandable archive, a short introduction, a four-step process, a full stack with 42 brand icons, and direct contact links.
 
----
+The original hero markup, artwork, and animation functions are preserved. English and French are supported throughout the page and project dialogs. All eleven projects remain available.
 
-## 🚀 Key Features
+## Local preview
 
-* **Cinematic Hero Load Animation**: On load, the page starts with a clear background image which transitions into a frosted-glass/acrylic blur over 1.8 seconds using GSAP. Following the blur, headers and text copy animate into view.
-* **Interactive Spotlight**: Hovering your cursor over the blurred hero background reveals a crisp spotlight circle underneath.
-* **Capabilities / Services Grid**: Highlighted services (n8n, AI, ETL, Web/App Dev) styled with custom inline SVGs and a triangular diagonal color sweep on hover.
-* **Circular Process Carousel**: A trigonometric step wheel on the left that rotates automatically (6s interval) or via manual clicks/arrows, showing active details in a sidebar with smooth GSAP transition fades. Autoplay pauses automatically on hover.
-* **Work Proof Case Studies (11 Projects)**: Grid displaying real case screenshots with a "Show More" toggle (loads first 3 initially). Clicking a project opens a dynamic details modal displaying tools used, screenshot, and detailed specifications.
-* **Bilingual Support (EN / FR)**: Full internationalization (i18n) translation toggle supporting English and French for the entire page, including dynamically loaded project modals.
-* **Advanced SEO & Schema.org**: Fully optimized meta properties (Open Graph, Twitter Cards) and JSON-LD Person structured data.
+Run `python -m http.server 5186 --bind 127.0.0.1` from the repository and open http://127.0.0.1:5186. No build or package installation is required.
 
----
+## Files
 
-## 📁 File Structure
+- `index.html`: page structure and English fallback copy.
+- `assets/css/style.css` and `style.min.css`: original styles, including the preserved hero. The page loads the minified version.
+- `assets/css/portfolio-v2.css`: redesigned sections, navigation, and project dialogs.
+- `assets/js/script.js`: bilingual content, hero animation, navigation, and project dialogs.
+- `assets/js/script.min.js`: deployed JavaScript; regenerate with Terser after editing the source. Bump its query version in index.html when publishing an update.
+- `assets/images` and `assets/screenshots`: original portrait, hero image, and project images.
 
-The project follows a clean organization structure, keeping **only the primary HTML page in the root directory** and grouping all other files under the `/assets` directory:
+GSAP, ScrollTrigger, and fonts load from the existing external providers. The redesign adds no dependencies.
 
-```text
-/ (Root)
-├── index.html          # Main portfolio page
-└── assets/
-    ├── css/
-    │   └── style.css   # Main stylesheet (Cinematic B&W theme)
-    ├── js/
-    │   └── script.js   # Interactivity (i18n, carousels, modals, canvas)
-    ├── images/
-    │   ├── background.png
-    │   ├── design.jpg
-    │   └── profile.png # About portrait image
-    ├── icons/
-    │   ├── favicon.ico
-    │   ├── favicon-16x16.png
-    │   ├── favicon-32x32.png
-    │   ├── apple-touch-icon.png
-    │   └── android-chrome-*.png
-    ├── screenshots/    # Project case study images
-    │   └── [11 project webps/pngs]
-    ├── rubix-loader/   # Rubix loader script experiments
-    └── backups/        # Archived backup files (.bak)
-```
+## Verification
 
----
+Check syntax with `node --check assets/js/script.js` and `node --check assets/js/script.min.js`. In a browser, check both languages, desktop and mobile layouts, the project archive, dialog opening and Escape dismissal, focus return, navigation, and contact links.
 
-## 🛠️ Technology Stack
+The site is published from `main` at https://0d4vid.is-a.dev/. The previous version is preserved on `portfolio-v1`.
 
-* **Structure**: HTML5
-* **Styling**: Vanilla CSS3 (utilizing modern OKLCH color spaces, CSS Variables, and CSS transitions)
-* **Logic & Canvas**: Vanilla JavaScript (ES6+), HTML5 Canvas (Matrix/ASCII ambient background)
-* **Animations**: 
-  * [GSAP & ScrollTrigger](https://greensock.com/gsap/) (Page entrance timelines, scroll-driven offsets)
-  * [AOS (Animate on Scroll)](https://michalsnik.github.io/aos/) (Scroll triggers on text sections)
-* **Typography**: Google Fonts (Syne, Big Shoulders Display, JetBrains Mono)
-* **CDN Integrations**: simpleicons.org (Logo integrations)
+See `SEO-AUDIT.md` for the comparison with the original SEO configuration.
 
----
-
-## 💻 Setup & Deployment
-
-1. Clone or download the files.
-2. The portfolio runs entirely on the client side. You can open `index.html` directly in any web browser.
-3. For local testing with asset loads (e.g. favicon or scroll behaviors), run a simple local server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve
-   ```

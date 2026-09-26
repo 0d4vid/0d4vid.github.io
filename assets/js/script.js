@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════
    NONAGNI DAVID — PORTFOLIO  ·  script.js
-   Sections: i18n · Preloader · Canvas · GSAP · AOS · Nav
+   Sections: i18n · Preloader · Canvas · GSAP · Nav
    ═══════════════════════════════════════════════════════════ */
 
 /* ── CONTENT (bilingual) ─────────────────────────────────── */
@@ -78,10 +78,6 @@ const content = {
     statProjects:    "projects completed",
     statCommunity:   "coding community members",
     statEducation:   "bachelor & bts degree",
-    orbitTitle:      "Orbit SARL",
-    orbitTextShort:  "AI & Software Intern - Applied machine learning models and business tool integration.",
-    codingHqTitle:   "Coding HQ",
-    codingHqTextShort: "CTO & Co-founder - Led engineering training, community mentoring, and web projects.",
 
     stackTitle:      "Stack.",
     stackAutomation: "Automation",
@@ -170,10 +166,6 @@ const content = {
     statProjects:    "projets réalisés",
     statCommunity:   "membres de la communauté",
     statEducation:   "licence & bts",
-    orbitTitle:      "Orbit SARL",
-    orbitTextShort:  "Stagiaire IA & Logiciel - Intégration de modèles ML et d'outils d'entreprise.",
-    codingHqTitle:   "Coding HQ",
-    codingHqTextShort: "CTO & Co-fondateur - Formation en ingénierie, mentorat communautaire et projets web.",
 
     stackTitle:      "Stack.",
     stackAutomation: "Automatisation",
@@ -189,6 +181,21 @@ const content = {
     backToTop:       "Retour en haut ↑",
   },
 };
+
+
+/* Portfolio v2 copy. Hero translations remain unchanged. */
+Object.assign(content.en, {"navProof": "Work", "v2NavAbout": "About", "v2Intro": "I build tools that take repetitive work off your team's hands.", "v2Service1": "Automation & AI", "v2Service1Text": "Connect your tools, automate recurring tasks, and build assistants that work with your data.", "v2Service2": "Web & applications", "v2Service2Text": "Websites, interfaces, and custom tools, built around how people use them.", "v2Service3": "Data & analytics", "v2Service3Text": "Bring scattered data together in pipelines, dashboards, and machine learning models.", "v2Work": "Selected work.", "v2Project2": "Website for a creative agency in Douala.", "v2Project1": "A company chatbot with document retrieval.", "v2Project9": "Social content creation and publishing with n8n.", "v2Archive": "More projects", "v2Location": "Douala, Cameroon", "v2About": "Behind the work.", "v2Bio": "I'm David, a software developer and AI automation builder based in Douala. I build workflows, websites, and data tools for businesses.", "v2Approach": "We start with how your team works today. Then I build, test, and document the tools you'll use next.", "v2Contact": "Have a project?", "v2ContactText": "Tell me what you're working on and where you need a hand."});
+Object.assign(content.fr, {"navProof": "Projets", "v2NavAbout": "À propos", "v2Intro": "Des outils pour automatiser les tâches qui occupent vos journées.", "v2Service1": "Automatisation & IA", "v2Service1Text": "Connecter vos outils, automatiser les tâches récurrentes et créer des assistants qui utilisent vos données.", "v2Service2": "Web & applications", "v2Service2Text": "Des sites, des interfaces et des outils sur mesure, conçus pour leurs utilisateurs.", "v2Service3": "Données & analyse", "v2Service3Text": "Rassembler vos données dans des pipelines, des tableaux de bord et des modèles d'apprentissage automatique.", "v2Work": "Projets choisis.", "v2Project2": "Site web pour une agence créative à Douala.", "v2Project1": "Un chatbot d'entreprise qui consulte ses documents.", "v2Project9": "Création et publication de contenu social avec n8n.", "v2Archive": "Autres projets", "v2Location": "Douala, Cameroun", "v2About": "Derrière les projets.", "v2Bio": "Moi, c'est David. Développeur logiciel et créateur d'automatisations IA à Douala, je construis des workflows, des sites et des outils de données pour les entreprises.", "v2Approach": "On part du fonctionnement actuel de votre équipe. Je développe ensuite vos outils, les teste et prépare leur documentation.", "v2Contact": "Un projet en tête ?", "v2ContactText": "Parlez-moi de votre projet et de ce dont vous avez besoin."});
+
+Object.assign(content.en, {"v2Step1": "Understand", "v2Step1Text": "Map your workflow and agree on what needs to change.", "v2Step2": "Plan", "v2Step2Text": "Choose the tools, define the scope, and walk through the approach together.", "v2Step3": "Build", "v2Step3Text": "Develop the system and share working versions for your feedback.", "v2Step4": "Hand over", "v2Step4Text": "Test real scenarios, document the setup, and show your team how to use it."});
+Object.assign(content.fr, {"v2Step1": "Comprendre", "v2Step1Text": "Examiner votre fonctionnement et définir ce qui doit changer.", "v2Step2": "Préparer", "v2Step2Text": "Choisir les outils, délimiter le projet et valider l'approche ensemble.", "v2Step3": "Développer", "v2Step3Text": "Construire le système et partager des versions fonctionnelles pour recueillir vos retours.", "v2Step4": "Transmettre", "v2Step4Text": "Tester des cas réels, documenter la configuration et former votre équipe à l'utilisation."});
+
+Object.assign(content.en, {"v2ServicesHeading": "What I build.", "v2StackLead": "The tools I use to build, connect, and ship."});
+Object.assign(content.fr, {"v2ServicesHeading": "Ce que je crée.", "v2StackLead": "Mes outils pour développer, connecter et livrer."});
+
+
+Object.assign(content.en, {v2ServicesHeading: 'Services.', v2Work: 'Projects.', v2About: 'About.', v2Bio: 'I build AI tools, automations, and software for teams that need their systems to do more of the work.', v2Approach: 'That includes AI assistants, connected workflows, websites, mobile apps, and internal tools.', v2StackLead: 'The tools I use for AI, automation, web, and app development.'});
+Object.assign(content.fr, {v2ServicesHeading: 'Services.', v2Work: 'Projets.', v2About: 'À propos.', v2Bio: 'Je crée des outils IA, des automatisations et des logiciels pour les équipes qui veulent que leurs systèmes prennent en charge une plus grande partie du travail.', v2Approach: 'Cela inclut des assistants IA, des workflows connectés, des sites web, des applications mobiles et des outils internes.', v2StackLead: 'Mes outils pour l’IA, l’automatisation, le web et le développement d’applications.'});
 
 /* Typewriter phrases */
 const phrases = {
@@ -217,8 +224,8 @@ let twCharIndex    = 0;
 let twIsDeleting   = false;
 let twTimer        = null;
 
-let activeProcessIndex = 0;
 let activeModalProjectIndex = null;
+let modalTrigger = null;
 
 /* ── LANGUAGE ────────────────────────────────────────────── */
 function setLang(lang) {
@@ -245,6 +252,8 @@ function setLang(lang) {
   if (modal && modal.classList.contains("active") && activeModalProjectIndex !== null) {
     populateModal(activeModalProjectIndex, lang);
   }
+
+  document.getElementById("modal-close").setAttribute("aria-label", lang === "fr" ? "Fermer le projet" : "Close project");
 
   // Reset typewriter
   clearTimeout(twTimer);
@@ -542,17 +551,6 @@ function initGsap() {
       duration: 0.75,
       ease: "power2.out",
     });
-  });
-}
-
-/* ── AOS ─────────────────────────────────────────────────── */
-function initAos() {
-  if (typeof AOS === "undefined") return;
-  AOS.init({
-    duration: 620,
-    easing:   "ease-out-cubic",
-    once:     true,
-    offset:   60,
   });
 }
 
@@ -910,12 +908,12 @@ const projectsData = [
     en: {
       title: "Flashart Agency",
       tag: "Web Dev",
-      desc: "Website for a creative agency. Developed with high-performance CSS/SCSS and Vanilla JS, including advanced SEO and speed optimization."
+      desc: "A website for a creative agency in Douala, built with HTML, SCSS, and JavaScript."
     },
     fr: {
       title: "Agence Flashart",
       tag: "Développement Web",
-      desc: "Site web pour une agence créative développé avec SCSS et Vanilla JS. Intègre une optimisation avancée du SEO et du temps de chargement."
+      desc: "Un site pour une agence créative à Douala, développé en HTML, SCSS et JavaScript."
     },
     tools: ["HTML5", "SCSS", "JavaScript", "Tailwind CSS"],
     image: "assets/screenshots/Screenshot 2025-12-06 at 03-03-30 Flashart Creative Agency in Douala Cameroon.avif"
@@ -980,12 +978,12 @@ const projectsData = [
     en: {
       title: "Portfolio Site",
       tag: "Web Dev",
-      desc: "Dynamic portfolio site displaying capabilities, rotating circular process steps, and dynamic modal overlays for case studies."
+      desc: "An earlier version of this portfolio, with an animated hero and project details in overlays."
     },
     fr: {
       title: "Portfolio Interactif",
       tag: "Développement Web",
-      desc: "Site de portfolio dynamique présentant mes compétences, des étapes de processus circulaires interactives et des études de cas."
+      desc: "Une version précédente de ce portfolio, avec un accueil animé et des fiches de projets."
     },
     tools: ["HTML5", "CSS", "JavaScript", "GSAP", "AOS"],
     image: "assets/screenshots/Screenshot 2026-06-10 at 10-48-35 Nonagni David · AI Automation Builder.avif"
@@ -1053,7 +1051,7 @@ function populateModal(idx, lang) {
         ${toolsMarkup}
       </ul>
     </div>
-    <h3 class="modal-title">${pData.title}</h3>
+    <h3 class="modal-title" id="modal-project-title">${pData.title}</h3>
     <p class="modal-desc">${pData.desc}</p>
   `;
 }
@@ -1062,12 +1060,18 @@ function openModal(idx) {
   const modal = document.getElementById("project-modal");
   if (!modal) return;
 
+  modalTrigger = document.activeElement;
+  modal.inert = false;
+  document.querySelector(".v2").inert = true;
+  document.querySelector(".hero").inert = true;
+  document.querySelector(".site-header").inert = true;
   activeModalProjectIndex = idx;
   populateModal(idx, currentLang);
 
   modal.classList.add("active");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  document.getElementById("modal-close").focus();
 }
 
 function closeModal() {
@@ -1078,127 +1082,15 @@ function closeModal() {
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
   activeModalProjectIndex = null;
+  modal.inert = true;
+  document.querySelector(".v2").inert = false;
+  document.querySelector(".hero").inert = false;
+  document.querySelector(".site-header").inert = false;
+  modalTrigger?.focus();
 }
 
-/* ── PROCESS CAROUSEL ────────────────────────────────────── */
-let processAutoplayTimer = null;
-const AUTOPLAY_INTERVAL = 6000; // 6 seconds
-
-function startProcessAutoplay() {
-  stopProcessAutoplay();
-  processAutoplayTimer = setInterval(() => {
-    let nextIdx = (activeProcessIndex + 1) % 4;
-    setActiveProcess(nextIdx);
-  }, AUTOPLAY_INTERVAL);
-}
-
-function stopProcessAutoplay() {
-  if (processAutoplayTimer) {
-    clearInterval(processAutoplayTimer);
-    processAutoplayTimer = null;
-  }
-}
-
-function setActiveProcess(index) {
-  activeProcessIndex = index;
-
-  const nodes = document.querySelectorAll(".process-wheel-node");
-  nodes.forEach((node, idx) => {
-    node.classList.toggle("active", idx === index);
-  });
-
-  const rotationAngle = -90 * index;
-  const wheel = document.getElementById("process-wheel");
-  if (wheel) {
-    wheel.style.setProperty("--rotation-angle", `${rotationAngle}deg`);
-    nodes.forEach((node) => {
-      node.style.setProperty("--rotation-angle", `${rotationAngle}deg`);
-    });
-  }
-
-  // Update text panel
-  const titleEl = document.getElementById("process-step-title");
-  const textEl = document.getElementById("process-step-text");
-  const numEl = document.getElementById("process-step-num");
-
-  const prefix = `processStep${index}`;
-  const descKey = `process${["Diagnose", "Design", "Build", "Stabilize"][index]}`;
-
-  if (titleEl && textEl && numEl) {
-    numEl.textContent = `0${index + 1}`;
-
-    if (typeof gsap !== "undefined") {
-      gsap.to([titleEl, textEl], {
-        opacity: 0,
-        y: -10,
-        duration: 0.2,
-        onComplete: () => {
-          titleEl.textContent = content[currentLang][prefix] || "";
-          textEl.textContent = content[currentLang][descKey] || "";
-          titleEl.setAttribute("data-i18n", prefix);
-          textEl.setAttribute("data-i18n", descKey);
-
-          gsap.to([titleEl, textEl], {
-            opacity: 1,
-            y: 0,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        }
-      });
-    } else {
-      titleEl.textContent = content[currentLang][prefix] || "";
-      textEl.textContent = content[currentLang][descKey] || "";
-      titleEl.setAttribute("data-i18n", prefix);
-      textEl.setAttribute("data-i18n", descKey);
-    }
-  }
-}
-
-function initProcessCarousel() {
-  const nodes = document.querySelectorAll(".process-wheel-node");
-  nodes.forEach((node, idx) => {
-    node.addEventListener("click", () => {
-      setActiveProcess(idx);
-      startProcessAutoplay(); // Reset timer on manual click
-    });
-  });
-
-  const prevBtn = document.getElementById("process-prev");
-  const nextBtn = document.getElementById("process-next");
-
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      let nextIdx = activeProcessIndex - 1;
-      if (nextIdx < 0) nextIdx = 3;
-      setActiveProcess(nextIdx);
-      startProcessAutoplay(); // Reset timer on manual click
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      let nextIdx = activeProcessIndex + 1;
-      if (nextIdx > 3) nextIdx = 0;
-      setActiveProcess(nextIdx);
-      startProcessAutoplay(); // Reset timer on manual click
-    });
-  }
-
-  // Hover pauses autoplay, leaving resumes autoplay
-  const container = document.querySelector(".process-carousel-container");
-  if (container) {
-    container.addEventListener("mouseenter", stopProcessAutoplay);
-    container.addEventListener("mouseleave", startProcessAutoplay);
-  }
-
-  // Start autoplay initially
-  startProcessAutoplay();
-}
-
-/* ── PROJECT MODAL ───────────────────────────────────────── */
 function initProjectModal() {
-  const cards = document.querySelectorAll(".proof-card");
+  const cards = document.querySelectorAll("[data-project-idx]");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
       const idx = parseInt(card.getAttribute("data-project-idx"));
@@ -1217,6 +1109,10 @@ function initProjectModal() {
   }
 
   window.addEventListener("keydown", (e) => {
+    if (e.key === "Tab" && activeModalProjectIndex !== null) {
+      e.preventDefault();
+      document.getElementById("modal-close").focus();
+    }
     if (e.key === "Escape") {
       const modal = document.getElementById("project-modal");
       if (modal && modal.classList.contains("active")) {
@@ -1226,34 +1122,14 @@ function initProjectModal() {
   });
 }
 
-/* ── SHOW MORE PROOFS ────────────────────────────────────── */
-function initShowMoreProofs() {
-  const showMoreBtn = document.getElementById("show-more-proofs");
-  if (showMoreBtn) {
-    showMoreBtn.addEventListener("click", () => {
-      const hiddenCards = document.querySelectorAll(".proof-card.hidden");
-      hiddenCards.forEach((card) => {
-        card.classList.remove("hidden");
-      });
-      showMoreBtn.style.display = "none";
-      if (typeof AOS !== "undefined") {
-        AOS.refresh();
-      }
-    });
-  }
-}
-
 /* ── BOOT ────────────────────────────────────────────────── */
 (function init() {
   initPreloader();
   initCanvas();
   initHeroAsciiBg();
-  initAos();
   initNav();
   initLangToggle();
-  initProcessCarousel();
   initProjectModal();
-  initShowMoreProofs();
 
   // Resolve language selection on load
   let initialLang = "fr";
@@ -1293,3 +1169,20 @@ function initShowMoreProofs() {
     initGsap();
   }
 })();
+
+/* Short scene entrances; content remains visible if animation is unavailable. */
+function initV2Scenes() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(({target, isIntersecting}) => {
+      if (!isIntersecting) return;
+      target.animate([
+        { opacity: 0.25, transform: 'translateY(24px)' },
+        { opacity: 1, transform: 'translateY(0)' }
+      ], { duration: 750, easing: 'cubic-bezier(.22,1,.36,1)' });
+      observer.unobserve(target);
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.v2-project, .v2-stack-group, .v2-steps li, .v2-portrait').forEach(el => observer.observe(el));
+}
+initV2Scenes();
