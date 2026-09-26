@@ -405,9 +405,9 @@ body:not(.aos-ready) [data-aos] {
   border-bottom: 1px solid var(--line-hi);
   background: #ffffff;
   /* CSS custom properties initialized to clear state */
-  --hero-blur: 0;
-  --hero-scale: 1;
-  --hero-opacity: 1;
+  --hero-blur: 24;
+  --hero-scale: 1.08;
+  --hero-opacity: 0.8;
 }
 
 .hero::before {

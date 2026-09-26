@@ -56,15 +56,19 @@
     }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="assets/images/background.avif" as="image" type="image/avif" fetchpriority="high" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" /></noscript>
+    <link rel="preload" href="assets/fonts/big-shoulders-display-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/syne-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      @font-face { font-family: 'Big Shoulders Display'; src: url('assets/fonts/big-shoulders-display-latin.woff2') format('woff2'); font-style: normal; font-weight: 700 900; font-display: swap; }
+      @font-face { font-family: 'Syne'; src: url('assets/fonts/syne-latin.woff2') format('woff2'); font-style: normal; font-weight: 400 800; font-display: swap; }
+      @font-face { font-family: 'JetBrains Mono'; src: url('assets/fonts/jetbrains-mono-latin.woff2') format('woff2'); font-style: normal; font-weight: 300 700; font-display: swap; }
+      @font-face { font-family: 'JetBrains Mono'; src: url('assets/fonts/jetbrains-mono-italic-latin.woff2') format('woff2'); font-style: italic; font-weight: 300; font-display: swap; }
+    </style>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="stylesheet" href="assets/css/style.min.css" />
 
-    <link rel="stylesheet" href="assets/css/portfolio-v2.css?v=7" />
+    <link rel="stylesheet" href="assets/css/portfolio-v2.css?v=11" />
 
     <!-- Critical CSS for Preloader to prevent FOUC & CLS -->
     <style>
@@ -96,7 +100,6 @@
     </style>
   </head>
   <body>
-    <canvas class="ascii-field" id="ascii-field" aria-hidden="true"></canvas>
 
     <div class="preloader" id="preloader" aria-label="Loading portfolio">
       <svg class="preloader-cube" viewBox="0 0 60 60" stroke="#6D7582" stroke-linejoin="round" aria-hidden="true">
@@ -130,16 +133,14 @@
         </nav>
 
         <div class="header-actions">
-          <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">FR</button>
+          <button class="lang-toggle" type="button" data-lang-toggle aria-label="FR - switch to French">FR</button>
           <a class="header-cta" href="#contact" data-i18n="navCta">Discuss a project</a>
         </div>
       </header>
 
       <!-- ── HERO ───────────────────────────────────── -->
       <section class="hero section-band" aria-labelledby="hero-title">
-
-        <!-- Canvas for animated ASCII background image -->
-        <canvas class="hero-ascii-canvas" id="hero-ascii-canvas" aria-hidden="true"></canvas>
+        <img class="hero-bg" src="assets/images/background.avif" alt="" fetchpriority="high" decoding="async" />
 
         <!-- Left: cinematic copy -->
         <div class="hero-copy">
@@ -221,6 +222,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/script.min.js?v=10" defer></script>
+    <script src="assets/js/script.min.js?v=11" defer></script>
   </body>
 </html>

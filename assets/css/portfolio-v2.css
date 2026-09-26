@@ -19,7 +19,7 @@
 .v2-services h2 { font: 500 14px var(--font-mono); letter-spacing: 0; text-transform: none; margin: 8px 0; }
 .v2-service { display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 26px 0; border-top: 1px solid var(--line); }
 .v2-service:last-child { border-bottom: 1px solid var(--line); }
-.v2-number { font: 400 11px var(--font-mono); color: #737373; padding-top: 5px; }
+.v2-number { font: 400 11px var(--font-mono); color: #686868; padding-top: 5px; }
 .v2-service h3 { font-size: 22px; font-weight: 500; letter-spacing: -.025em; margin-bottom: 8px; }
 .v2-service p { max-width: 470px; margin: 0; font-size: 14px; line-height: 1.7; }
 .v2-work { border-top: 1px solid var(--line); }
@@ -141,7 +141,7 @@
 .v2-steps { gap: 0; border-top: 1px solid var(--line); }
 .v2-steps li { border: 0; padding: 28px 24px 12px; border-left: 1px solid var(--line); }
 .v2-steps li:first-child { padding-left: 0; border-left: 0; }
-.v2-step-number { font: 800 clamp(54px, 5vw, 72px)/1 var(--font-display); color: #969693; margin-bottom: 24px; }
+.v2-step-number { font: 800 clamp(54px, 5vw, 72px)/1 var(--font-display); color: #8c8c88; margin-bottom: 24px; }
 .v2-stack { display: block; }
 .v2-stack-heading { margin-bottom: 40px; }
 .v2-stack-heading h2 { margin-bottom: 20px; }
@@ -186,3 +186,6 @@
   .v2-project-image img, .v2-tool-grid img { transition: none; }
   .v2-project:hover img, .v2-tool-grid li:hover img { transform: none; }
 }
+
+.hero::before { display: none; }
+.hero-bg { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; filter: blur(24px); transform: scale(1.08); opacity: .8; pointer-events: none; }
