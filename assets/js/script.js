@@ -668,6 +668,8 @@ function initHeroAsciiBg() {
   let time = 0;
   let lastDraw = 0;
   const frameInterval = 1000 / 24;
+  let samples = null;
+  let vignettes = null;
 
   function resize() {
     if (!imgLoaded) return;
@@ -708,7 +710,23 @@ function initHeroAsciiBg() {
 
     try {
       octx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, cols, rows);
+      const pixels = octx.getImageData(0, 0, cols, rows).data;
+      samples = new Float32Array(cols * rows);
+      vignettes = new Float32Array(cols * rows);
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const index = r * cols + c;
+          const pixel = index * 4;
+          let brightness = 1 - (0.299 * pixels[pixel] + 0.587 * pixels[pixel + 1] + 0.114 * pixels[pixel + 2]) / 255;
+          brightness = brightness < 0.12 ? 0 : Math.pow((brightness - 0.12) / 0.88, 0.7);
+          samples[index] = brightness;
+          const dc = (c - cols / 2) / (cols * 0.85);
+          const dr = (r - rows * 0.55) / (rows * 0.7);
+          vignettes[index] = Math.pow(Math.max(0, 1 - Math.sqrt(dc * dc + dr * dr)), 0.8);
+        }
+      }
     } catch (e) {
+      samples = null;
       console.warn("Offscreen draw failed:", e);
     }
   }
@@ -755,94 +773,41 @@ function initHeroAsciiBg() {
     ctx.font = "bold 10px 'JetBrains Mono', monospace";
     ctx.textBaseline = "top";
 
-    // Redraw offscreen to get fresh samples
-    const canvasAspect = cols / rows;
-    const imgW = img.naturalWidth || 800;
-    const imgH = img.naturalHeight || 450;
-    const imgAspect = imgW / imgH;
-    let sx = 0, sy = 0, sWidth = imgW, sHeight = imgH;
-
-    if (imgAspect > canvasAspect) {
-      sWidth = imgH * canvasAspect;
-      sx = (imgW - sWidth) / 2;
-    } else {
-      sHeight = imgW / canvasAspect;
-      sy = (imgH - sHeight) / 2;
-    }
-    
-    try {
-      octx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, cols, rows);
-    } catch (e) {
-      return;
-    }
-
-    const imgData = octx.getImageData(0, 0, cols, rows);
-    const pixels = imgData.data;
+    if (!samples || !vignettes) return;
+    const mouseActive = mouseX > -1000 && mouseY > -1000;
+    const waveYs = new Float32Array(cols);
+    for (let c = 0; c < cols; c++) waveYs[c] = Math.cos(c * 0.1 + time * 0.03) * 0.8;
+    const glitch = Math.sin(time * 0.5) * 3;
 
     // Distort and render ASCII characters
     for (let r = 0; r < rows; r++) {
+      const waveX = Math.sin(r * 0.15 + time * 0.04) * 1.5;
+      const glitchShift = Math.sin(r * 0.4 + time * 0.1) > 0.96 ? glitch : 0;
       for (let c = 0; c < cols; c++) {
-        // 1. Wave distortion: compute offsets using sine waves
-        const waveX = Math.sin(r * 0.15 + time * 0.04) * 1.5;
-        const waveY = Math.cos(c * 0.1 + time * 0.03) * 0.8;
 
         // 2. Mouse interaction coordinate displacement
         const cellX = c * cellWidth;
         const cellY = r * cellHeight;
-        const dx = cellX - mouseX;
-        const dy = cellY - mouseY;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const maxMouseDist = 160;
         let mouseFactor = 0;
-
         let pushX = 0;
         let pushY = 0;
-        if (dist < maxMouseDist) {
-          mouseFactor = 1 - dist / maxMouseDist;
-          const angle = Math.atan2(dy, dx);
-          // Push coordinates away from mouse slightly
-          pushX = Math.cos(angle) * mouseFactor * 3.5;
-          pushY = Math.sin(angle) * mouseFactor * 1.5;
-        }
-
-        // Horizontal line glitch: select rows randomly to shift
-        let glitchShift = 0;
-        if (Math.sin(r * 0.4 + time * 0.1) > 0.96) {
-          glitchShift = Math.sin(time * 0.5) * 3;
+        if (mouseActive) {
+          const dx = cellX - mouseX;
+          const dy = cellY - mouseY;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 160) {
+            mouseFactor = 1 - dist / 160;
+            const angle = Math.atan2(dy, dx);
+            pushX = Math.cos(angle) * mouseFactor * 3.5;
+            pushY = Math.sin(angle) * mouseFactor * 1.5;
+          }
         }
 
         const sampleC = Math.max(0, Math.min(cols - 1, Math.round(c + waveX + pushX + glitchShift)));
-        const sampleR = Math.max(0, Math.min(rows - 1, Math.round(r + waveY + pushY)));
+        const sampleR = Math.max(0, Math.min(rows - 1, Math.round(r + waveYs[c] + pushY)));
 
-        // Read brightness (inverted: hands are dark on white background)
-        const idx = (sampleR * cols + sampleC) * 4;
-        const rVal = pixels[idx];
-        const gVal = pixels[idx + 1];
-        const bVal = pixels[idx + 2];
-        let brightness = 1 - (0.299 * rVal + 0.587 * gVal + 0.114 * bVal) / 255;
-
-        // Boost contrast & threshold out the bright background noise
-        if (brightness < 0.12) {
-          brightness = 0;
-        } else {
-          // Normalize and boost midtones
-          brightness = (brightness - 0.12) / 0.88;
-          brightness = Math.pow(brightness, 0.7);
-        }
-
-        // 3. Radial vignette: fade out the image at the edges to blend into background
-        // Wider horizontal (0.85) and vertical (0.7) vignette spread for complete visibility
-        const centerX = cols / 2;
-        const centerY = rows * 0.55; // centered vertically
-        const dc = c - centerX;
-        const dr = r - centerY;
-        const distCol = dc / (cols * 0.85);
-        const distRow = dr / (rows * 0.7);
-        const radialDist = Math.sqrt(distCol * distCol + distRow * distRow);
-        const vignette = Math.max(0, 1 - radialDist);
-        const smoothVignette = Math.pow(vignette, 0.8); // softer power to keep edges visible
-        
-        let finalBrightness = brightness * smoothVignette;
+        const brightness = samples[sampleR * cols + sampleC];
+        let finalBrightness = brightness * vignettes[r * cols + c];
 
         if (mouseFactor > 0) {
           finalBrightness += mouseFactor * 0.35; // boost mouse highlighting
